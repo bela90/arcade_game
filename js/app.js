@@ -1,3 +1,5 @@
+
+
 // Enemies our player must avoid
 var Enemy = function(x,y,speed) {
 
@@ -61,7 +63,9 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function (keyPress) {
-console.log(player.y);
+
+
+
 
     if (keyPress == 'left' && this.x > 0) {
         this.x -= 101;
@@ -72,13 +76,25 @@ console.log(player.y);
     };
 
     if (keyPress == 'up' && this.y > 0) {
-
+       
         this.y -= 83;
+    
+        if (player.y == -7) {        
+            setTimeout(function(){
+
+                alert('Congratulations! You made it!');
+                player.x = 202;
+                player.y = 325;
+
+            }, 400);
+        }
     };
 
     if (keyPress == 'down' && this.y < 408) {
         this.y += 83;
     };
+
+
    
 
 };
@@ -126,10 +142,7 @@ var checkCollision = function(enemyBug) {
 };
 
 
-if (player.y + 332 <= 76) {        
 
-        console.log('you made it!');
-}
 
 
 
