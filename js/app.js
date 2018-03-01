@@ -61,7 +61,7 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function (keyPress) {
-
+console.log(player.y);
 
     if (keyPress == 'left' && this.x > 0) {
         this.x -= 101;
@@ -79,15 +79,8 @@ Player.prototype.handleInput = function (keyPress) {
     if (keyPress == 'down' && this.y < 408) {
         this.y += 83;
     };
-      console.log(player.x, player.y);
+   
 
-    /*if (this.y < 0) {
-        setTimeout(function () {
-            this.x = 202;
-            this.y = 405;
-        }, 600);
-
-    };*/
 };
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -97,7 +90,6 @@ var allEnemies = [];
     allEnemies.push(new Enemy(0,145,70));
     allEnemies.push(new Enemy(200,145,70));
     allEnemies.push(new Enemy(0,230,80));
-    allEnemies.push(new Enemy(200,230,120));
 
 
 
@@ -121,21 +113,23 @@ document.addEventListener('keyup', function(e) {
 var checkCollision = function(enemyBug) {
     // check for collision between enemy and player
 
-    console.log(player.y, player.x);
+   
 
     if (
         player.y + 139 >= enemyBug.y + 77
         && player.x + 17 <= enemyBug.x + 99
         && player.y + 63 <= enemyBug.y + 143
         && player.x + 84 >= enemyBug.x + 1) {
-        console.log('collided');
         player.x = 202;
         player.y = 325;
     }
 };
 
 
+if (player.y + 332 <= 76) {        
 
+        console.log('you made it!');
+}
 
 
 
