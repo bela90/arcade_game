@@ -1,6 +1,29 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Frogger Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Frogger is a arcade game where object of the game (player) has to cross a road full of enemies (bugs) to reach the water. The enemies move in varying speeds on the canvas. When player reach the water, without colliding with bugs, game is completed. 
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+More detail instructions:
+
+* The player moves on the canvas on left, right, up and down arrow key press
+* The player has to avoid bugs
+* If player collides with bugs, player is returned on the start position 
+* If player successfully avoids all bugs and reach the water, game is completed
+
+## Implementation
+
+Game is implemented in Object-Oriented JavaScript, HTML5 Canvas API, HTML5 and styled with CSS. 
+
+To open and play game follow this [link](https://bela90.github.io/arcade_game/).
+Game is implemented for desktop version only.
+
+## Instalation 
+
+If you want to run the application, please follow this instructions: 
+
+* git clone https://github.com/bela90/arcade_game.git
+* or download zip file https://github.com/bela90/arcade_game/archive/master.zip
+* run index.html file in the application directory 
+
+## Contributing
+
+
