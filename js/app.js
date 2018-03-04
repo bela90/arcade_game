@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
         this.speed=(Math.random()*51)+90;
     }
 
-    checkCollision(this);
+    this.checkCollision();
 
 };
 
@@ -41,6 +41,22 @@ Enemy.prototype.update = function(dt) {
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+// check for collision between enemy and player
+Enemy.prototype.checkCollision = function() {
+    
+    // checking if player and enemy bug characters are overlapping from every side
+    // if they are overlapping, put player on the start position
+    if (
+        player.y + 139 >= this.y + 77
+        && player.x + 17 <= this.x + 99
+        && player.y + 63 <= this.y + 143
+        && player.x + 84 >= this.x + 1) {
+        player.x = PLAYER_START_X;
+        player.y = PLAYER_START_Y;
+    }
+};
+
 
 // Player class
 var Player = function(x,y,speed){
@@ -131,20 +147,6 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// check for collision between enemy and player
-var checkCollision = function(enemyBug) {
-    
-    // checking if player and enemy bug characters are overlapping from every side
-    // if they are overlapping, put player on the start position
-    if (
-        player.y + 139 >= enemyBug.y + 77
-        && player.x + 17 <= enemyBug.x + 99
-        && player.y + 63 <= enemyBug.y + 143
-        && player.x + 84 >= enemyBug.x + 1) {
-        player.x = PLAYER_START_X;
-        player.y = PLAYER_START_Y;
-    }
-};
 
 
 
